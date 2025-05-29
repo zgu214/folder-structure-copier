@@ -1,3 +1,8 @@
+<<<<<<< HEAD
+=======
+# folder-structure-copier
+PyQt6 GUI to copy folder structures with filtering and preview
+>>>>>>> da64240200816b6ea52a8e42f34ac9e945d026e6
 # 📁 Folder Structure Copier GUI
 
 A professional, feature-rich PyQt6 GUI tool to **replicate folder structures and file names** with advanced filtering, preview, and copy options. Ideal for developers, engineers, and analysts who need to mirror or backup folder hierarchies without manually sorting thousands of files.

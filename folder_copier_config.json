@@ -1,7 +1,0 @@
-{
-  "filter": ".py,.txt",
-  "keep_ext": true,
-  "copy_content": true,
-  "dry_run": false,
-  "dark_mode": false
-}

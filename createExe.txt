@@ -1,1 +1,0 @@
-python -m PyInstaller --noconfirm --onefile --windowed folder_structure_gui_v5.py

@@ -15,6 +15,10 @@ What this window adds on top of the engine:
   * Batched log output into a QPlainTextEdit (v1-v3 called
     QTextEdit.append() once per file, which was itself a bottleneck).
   * A Cancel button that stops in-flight work.
+
+Author:  Zhiqiang Gu <zhiqiang.gu214@gmail.com>
+Project: https://github.com/zgu214/folder-structure-copier
+License: MIT (see LICENSE)
 """
 
 from __future__ import annotations

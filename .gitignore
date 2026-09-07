@@ -11,6 +11,9 @@ venv/
 build/
 dist/
 
+# Personal drafts kept alongside the code, not part of the project
+notes/
+
 # Runtime state written by the app next to the script
 folder_copier_config.json
 copy_log.txt

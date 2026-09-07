@@ -17,6 +17,10 @@ Design notes (these are the reasons this is fast):
     cancelling stops promptly instead of draining a huge queue.
   * Progress and log callbacks are time-throttled inside the engine, so the
     UI cannot be flooded by per-file events.
+
+Author:  Zhiqiang Gu <zhiqiang.gu214@gmail.com>
+Project: https://github.com/zgu214/folder-structure-copier
+License: MIT (see LICENSE)
 """
 
 from __future__ import annotations

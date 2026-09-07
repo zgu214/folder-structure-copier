@@ -7,6 +7,10 @@ is the fastest way to run a large job (and the only way to script one):
     python fscopy_cli.py SRC DST --ext .py,.txt --exclude-dirs .git,node_modules
     python fscopy_cli.py SRC DST --dry-run --quiet
     python fscopy_cli.py SRC --export structure.txt
+
+Author:  Zhiqiang Gu <zhiqiang.gu214@gmail.com>
+Project: https://github.com/zgu214/folder-structure-copier
+License: MIT (see LICENSE)
 """
 
 from __future__ import annotations

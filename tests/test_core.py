@@ -2,6 +2,10 @@
 Tests for fscopy_core. No pytest needed (though pytest runs them fine):
 
     python tests/test_core.py
+
+Author:  Zhiqiang Gu <zhiqiang.gu214@gmail.com>
+Project: https://github.com/zgu214/folder-structure-copier
+License: MIT (see LICENSE)
 """
 
 import os

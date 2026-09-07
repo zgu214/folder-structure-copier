@@ -1,12 +1,12 @@
 # -*- mode: python ; coding: utf-8 -*-
-
+# PyInstaller build recipe:  pyinstaller folder_structure_gui.spec
 
 a = Analysis(
-    ['folder_structure_gui_v5.py'],
+    ['folder_structure_gui.py'],
     pathex=[],
     binaries=[],
     datas=[],
-    hiddenimports=[],
+    hiddenimports=['fscopy_core'],
     hookspath=[],
     hooksconfig={},
     runtime_hooks=[],
@@ -22,7 +22,7 @@ exe = EXE(
     a.binaries,
     a.datas,
     [],
-    name='folder_structure_gui_v5',
+    name='folder_structure_gui',
     debug=False,
     bootloader_ignore_signals=False,
     strip=False,

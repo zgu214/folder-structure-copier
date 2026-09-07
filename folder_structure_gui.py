@@ -1,9 +1,9 @@
 """
-Folder Structure Copier GUI (v4)
+Folder Structure Copier GUI (version 2.0)
 
-A faster rebuild of folder_structure_GUI / GUI2 / GUI3. Same job -- preview a
-folder tree, filter it, and copy the structure (with or without file content)
-to a destination -- with the slow parts redesigned. All scanning and copying
+A faster rebuild of version 1. Same job -- preview a folder tree, filter it,
+and copy the structure (with or without file content) to a destination --
+with the slow parts redesigned. All scanning and copying
 lives in fscopy_core (Qt-free, shared with fscopy_cli.py and the tests); this
 file is only the window.
 
@@ -38,8 +38,9 @@ from PyQt6.QtWidgets import (
 )
 
 from fscopy_core import (
-    DEFAULT_EXCLUDES, DEFAULT_MAX_WORKERS, CopyOptions, ScanOptions,
-    copy_tree, export_structure, file_passes, human_bytes, human_duration,
+    APP_NAME, AUTHOR, AUTHOR_EMAIL, DEFAULT_EXCLUDES, DEFAULT_MAX_WORKERS,
+    LICENSE, PROJECT_URL, CopyOptions, ScanOptions, __version__, copy_tree,
+    export_structure, file_passes, human_bytes, human_duration,
     is_excluded_dir, scan_tree,
 )
 
@@ -206,7 +207,7 @@ class LazyFolderTree(QTreeWidget):
 class FolderCopyApp(QWidget):
     def __init__(self):
         super().__init__()
-        self.setWindowTitle("Folder Structure Copier v4")
+        self.setWindowTitle(f"{APP_NAME} {__version__}")
         self.resize(1150, 800)
         self.setAcceptDrops(True)
         self.source_folder = ""
@@ -384,7 +385,22 @@ class FolderCopyApp(QWidget):
         splitter.setSizes([230, 230, 160])
         main_layout.addWidget(splitter)
 
+        main_layout.addWidget(self._build_footer())
         self.setLayout(main_layout)
+
+    def _build_footer(self):
+        """One discreet line naming the author, version and project home."""
+        footer = QLabel(
+            f'<span style="color:#888;">{APP_NAME} {__version__} &nbsp;·&nbsp; '
+            f'<a href="mailto:{AUTHOR_EMAIL}" style="color:#888;">{AUTHOR}</a> &nbsp;·&nbsp; '
+            f'<a href="{PROJECT_URL}" style="color:#888;">github.com/zgu214/folder-structure-copier</a>'
+            f' &nbsp;·&nbsp; {LICENSE} licence</span>'
+        )
+        footer.setTextFormat(Qt.TextFormat.RichText)
+        footer.setOpenExternalLinks(True)
+        footer.setAlignment(Qt.AlignmentFlag.AlignRight)
+        footer.setToolTip("Independent personal project, unrelated to any employer.")
+        return footer
 
     # -- Drag and drop -----------------------------------------------------
 

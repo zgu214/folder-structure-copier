@@ -1,5 +1,5 @@
 """
-Core scan/copy engine for Folder Structure Copier v4.
+Core scan/copy engine for Folder Structure Copier 2.0.
 
 Deliberately Qt-free: the GUI (folder_structure_gui.py), the CLI
 (fscopy_cli.py) and the tests all sit on top of this module.
@@ -33,6 +33,13 @@ import time
 from concurrent.futures import ThreadPoolExecutor, FIRST_COMPLETED, wait
 from dataclasses import dataclass, field
 from fnmatch import fnmatchcase
+
+APP_NAME = "Folder Structure Copier"
+__version__ = "2.0.0"
+AUTHOR = "Zhiqiang Gu"
+AUTHOR_EMAIL = "zhiqiang.gu214@gmail.com"
+PROJECT_URL = "https://github.com/zgu214/folder-structure-copier"
+LICENSE = "MIT"
 
 DEFAULT_MAX_WORKERS = min(32, (os.cpu_count() or 4) * 4)
 DEFAULT_EXCLUDES = (".git", "node_modules", "__pycache__", ".venv", "venv", ".mypy_cache", ".pytest_cache")

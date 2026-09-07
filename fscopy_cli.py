@@ -1,5 +1,5 @@
 """
-Headless CLI for Folder Structure Copier v4.
+Headless CLI for Folder Structure Copier 2.0.
 
 Same engine as the GUI, no Qt import and no per-file widget updates, so this
 is the fastest way to run a large job (and the only way to script one):
@@ -20,8 +20,9 @@ import sys
 import threading
 
 from fscopy_core import (
-    DEFAULT_EXCLUDES, DEFAULT_MAX_WORKERS, CopyOptions, ScanOptions,
-    copy_tree, export_structure, human_bytes, human_duration, scan_tree,
+    APP_NAME, AUTHOR, DEFAULT_EXCLUDES, DEFAULT_MAX_WORKERS, PROJECT_URL,
+    CopyOptions, ScanOptions, __version__, copy_tree, export_structure,
+    human_bytes, human_duration, scan_tree,
 )
 
 
@@ -29,7 +30,10 @@ def build_parser():
     p = argparse.ArgumentParser(
         prog="fscopy",
         description="Copy a folder structure (optionally without file contents), fast.",
+        epilog=f"{APP_NAME} {__version__} by {AUTHOR} — {PROJECT_URL}",
     )
+    p.add_argument("--version", action="version",
+                   version=f"{APP_NAME} {__version__} by {AUTHOR} — {PROJECT_URL}")
     p.add_argument("source", help="Source folder")
     p.add_argument("destination", nargs="?", help="Destination folder (omit with --export or --scan-only)")
     p.add_argument("--ext", default="", help="Only include these extensions, e.g. .py,.txt")

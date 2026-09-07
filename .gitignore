@@ -1,0 +1,18 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+.pytest_cache/
+.mypy_cache/
+
+# PyInstaller output
+build/
+dist/
+
+# Runtime state written by the app next to the script
+folder_copier_config.json
+copy_log.txt
+folder_structure.txt
+folder_structure.json

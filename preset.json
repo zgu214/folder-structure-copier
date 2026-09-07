@@ -1,8 +1,16 @@
 {
   "filter": ".py,.txt",
+  "exclude_dirs": ".git,node_modules,__pycache__,.venv,venv,.mypy_cache,.pytest_cache",
+  "exclude_files": "*.tmp,~$*",
   "keep_ext": true,
   "copy_content": true,
   "dry_run": false,
-  "dark_mode": true,
-  "preview_depth": 3
+  "dark_mode": false,
+  "skip_duplicates": true,
+  "verify_hash": false,
+  "size_filter_enabled": false,
+  "size_filter_kb": 0,
+  "date_filter_enabled": false,
+  "date_filter_days": 0,
+  "max_workers": 16
 }
